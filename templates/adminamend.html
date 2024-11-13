@@ -1,0 +1,21 @@
+{% include "header.html" %}
+{% include "adminfacing.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+<div class="my-padder"></div>
+<div class="container">
+    <form action="{{ url_for('admin_amend', entry_id=track.id) }}" method="POST">
+        {{ wtf.quick_form(amend_form) }}
+    </form>
+</div>
+
+<div class="d-flex container justify-content-center">
+    <a class="btn btn-primary" href="{{ url_for('admin_delete', entry_id=track.id) }}" role="button">Delete Record: {{track.id}}</a>
+</div>
+<div class="my-padder"></div>
+<div class="d-flex container justify-content-center">
+    <a class="btn btn-primary" href="{{ url_for('admin_dashboard') }}" role="button">Admin Dashboard</a>
+</div>
+
+
+
+{% include "footer.html" %}

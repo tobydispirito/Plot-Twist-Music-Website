@@ -1,0 +1,27 @@
+{% include "header.html" %}
+{% include "adminfacing.html" %}
+
+
+
+
+<div class="my-padder"></div>
+<div class="d-flex container justify-content-center">
+    <a class="btn btn-primary" href="{{ url_for('admin_create') }}" role="button">Create new record</a>
+</div>
+<div class="my-padder"></div>
+<div class="d-flex container justify-content-center">
+    <table>
+        <tr>
+            <th>database ID</th>
+            <th>Track title</th>
+        </tr>
+        {% for i in range(tracks|length) %}
+        <tr>
+            <td>{{ tracks[i].id }}</td>
+            <td><a href="{{ url_for('admin_amend', entry_id=tracks[i].id) }}">{{ tracks[i].title }}</a></td>
+        </tr>
+        {% endfor %}
+</table>
+</div>
+
+{% include "footer.html" %}

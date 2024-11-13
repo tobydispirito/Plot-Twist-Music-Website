@@ -1,0 +1,19 @@
+{% include "header.html" %}
+{% include "userfacing.html" %}
+
+
+<div class="discog-content-container">
+    <div class="discog-element-container"><img class="discography-image-item" src="{{ track.img_url }}" alt="artwork {{ track.title }}"></div>
+    <div class="discog-element-container">
+        <h4>{{ track.artist }} - {{ track.title }}{% if track.remix_artist %} ({{ track.remix_artist }} Remix){% endif %}</h4>
+        <p>{{ track.description }}</p>
+    </div>
+</div>
+<div class="streamer-link-container-multi">
+    <div class="streamer-link-container"><a href="{{ track.youtube_url }}" target=”_blank”><img class="streamer-link" src="/static/images/youtube-icon.png" alt="YouTube Link"></a></div>
+    <div class="streamer-link-container"><a href="{{ track.soundcloud_url }}" target=”_blank”><img class="streamer-link" src="/static/images/soundcloud-icon.png" alt="Soundcloud Link"></a></div>
+    <div class="streamer-link-container"><a href="{{ track.spotify_url }}" target=”_blank”><img class="streamer-link" src="/static/images/spotify-icon.png" alt="Spotify Link"></a></div>
+</div>
+
+{% include "navfooter.html" %}
+{% include "footer.html" %}

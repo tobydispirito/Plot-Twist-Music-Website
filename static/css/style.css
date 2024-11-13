@@ -1,0 +1,227 @@
+h1 {
+    -webkit-transform:scale(1,1.5); /* Safari and Chrome */
+    -moz-transform:scale(1,1.5); /* Firefox */
+    -ms-transform:scale(1,1.5); /* IE 9 */
+    -o-transform:scale(1,1.5); /* Opera */
+    transform:scale(1,1.5); /* W3C */
+    font-family: 'Geometos Rounded', sans-serif;
+    text-align: center;
+}
+
+body {
+    color: white;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    max-height: 100vh;
+}
+
+
+
+nav {
+
+}
+
+
+
+.page-background {
+    min-height:100vh;
+    height: 100%;
+    background-color: black;
+    background-image: url('../images/black pixel 4 by 3 singular.png'), url('../images/far background 4k.png');
+    background-position: center center, center center;
+    background-repeat: repeat, no-repeat;
+    background-attachment: fixed, fixed;
+
+
+}
+
+.entire-flex-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.primary-content {
+    max-height: calc(100vh - 50px);
+    overflow-y: scroll;
+}
+
+.primary-content::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+@media (max-width: 576px) {
+.primary-content {
+    flex: 1;
+    max-height: calc(100vh - 170px);
+    overflow:hidden;
+    overflow-y: scroll;
+}
+}
+
+
+
+.header-centered {
+    display: grid;
+    justify-content: center;
+    text-align: justify;
+}
+
+.discog-content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 600px));
+    gap: 5vw;
+    justify-content: center;
+    padding: 100px;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+.discog-content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 600px));
+    gap: 45px;
+    padding: 10px;
+    padding-top: 100px;
+}
+}
+
+.discog-element-container {
+    text-align: justify;
+}
+
+.discography-image-list {
+    max-height: 280px;
+    max-width: 280px;
+}
+
+
+.discography-image-item {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.inherit-background {
+    background: inherit;
+}
+
+.my-padder{
+    min-height: 60px;
+}
+
+.nav-padder {
+    min-height: 70px;
+}
+
+@media (max-width: 576px) {
+.nav-padder {
+    min-height: 190px;
+}
+}
+
+.nav-link {
+    color: white;
+}
+
+
+
+.admin-background {
+    min-height:100vh;
+    height: 100%;
+    background-color:gray;
+}
+
+.nav-link.active {
+    color: white;
+}
+
+.nav-link:hover {
+    color: gray;
+}
+
+.discography-cards {
+    background-color: gray;
+}
+
+.discography-card-item {
+    text-align: center;
+}
+
+.top-level-div {
+    display: grid;
+    border : 2px solid red;
+    justify-content: center;
+    padding: 100px;
+}
+
+.wip-discog-image {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wip-discog-image-container {
+    text-align: center;
+}
+
+.wip-discog-multi-image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 0.27fr));
+    gap: 3vw;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-top: 50px;
+}
+
+.artist-name-logo-container {
+    display: grid;
+    justify-content: center;
+    padding: 5vw;
+    padding-top: 60px;
+}
+
+.artist-name-logo {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.streamer-link-container-multi {
+    display: grid;
+    grid-template-columns: 150px 140px 95px;
+    padding-top: 20px;
+    gap: 8vw;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+.streamer-link-container-multi {
+    display: grid;
+    grid-template-columns: 150px 140px 95px;
+    gap: 3vw;
+    justify-content: center;
+}
+}
+
+.streamer-link-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.streamer-link {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
+

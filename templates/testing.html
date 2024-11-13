@@ -1,0 +1,17 @@
+{% include "header.html" %}
+{% include "userfacing.html" %}
+
+<h1>Discography</h1>
+
+<div class="wip-discog-multi-image-container">
+{% for track in tracks %}
+  <div class="wip-discog-image-container">
+    <a href="">
+      <img class="wip-discog-image" src="/static/images/artwork_1.png" alt="artwork 1">
+    </a>
+  </div>
+{% endfor %}
+</div>
+
+{% include "navfooter.html" %}
+{% include "footer.html" %}

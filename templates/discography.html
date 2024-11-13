@@ -1,0 +1,21 @@
+{% include "header.html" %}
+{% include "userfacing.html" %}
+
+<h1>Discography</h1>
+
+<div class="wip-discog-multi-image-container">
+{% for track in tracks %}
+
+  <div class="wip-discog-image-container">
+    <div>
+    <h4>{{ track.title }}</h4>
+  </div>
+    <a href="{{ url_for('discog_entry', entry_id=track.id) }}">
+      <img class="wip-discog-image" src="{{ track.img_url }}" alt="artwork {{ track.title }}">
+    </a>
+  </div>
+{% endfor %}
+</div>
+
+{% include "navfooter.html" %}
+{% include "footer.html" %}
