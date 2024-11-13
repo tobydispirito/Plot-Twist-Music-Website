@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
@@ -14,10 +15,12 @@ class Base(DeclarativeBase):
     pass
 
 
+
+
 db = SQLAlchemy(model_class=Base)
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'my-secret-key-TBC'
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///discography.db"
+app.config['SECRET_KEY'] = os.environ.get("APP_CONFIG_SECRET_KEY")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("APP_CONFIG_DATABASE_URI")
 bootstrap = Bootstrap(app)
 db.init_app(app)
 login_manager = LoginManager()
