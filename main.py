@@ -53,7 +53,6 @@ class AdminEntryID(FlaskForm):
     primary_id = IntegerField(label='id', validators=[DataRequired()])
     submit3 = SubmitField(label='Submit')
 
-
 class User(UserMixin, db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     username: Mapped[str] = mapped_column(String(250), nullable=False)
@@ -80,6 +79,8 @@ with app.app_context():
     db.create_all()
     result = db.session.execute(db.select(Track))
     track_object_list = result.scalars().all()
+    result = db.session.execute(db.select(User))
+    user_object_list = result.scalars().all()
 
 
 def refresh_tracks_list():
@@ -88,15 +89,17 @@ def refresh_tracks_list():
         result = db.session.execute(db.select(Track))
         track_object_list = result.scalars().all()
 
-
+def refresh_user_list():
+    global user_object_list
+    with app.app_context():
+        result = db.session.execute(db.select(User))
+        user_object_list = result.scalars().all()
 
 
 # Creating my salted & hashed password entry for verification of method
 
 # with app.app_context():
-#     admin_login = User(username="Admin", stored_password=generate_password_hash("password123",
-#                                                                                         method='pbkdf2:sha256',
-#                                                                                         salt_length=8))
+#     admin_login = User(username="Admin", stored_password=generate_password_hash("password123", method='pbkdf2:sha256', salt_length=8))
 #     print(f"The username is: {admin_login.username}")
 #     print(f"The salted & hashed password is: {admin_login.stored_password}")
 #     db.session.add(admin_login)
@@ -113,19 +116,34 @@ my_name = "Plot Twist"
 @app.route("/adminlogin", methods=["GET", "POST"])
 def admin_login():
     admin_login_form = AdminLogin()
-    if admin_login_form.validate_on_submit():
-        entered_username = admin_login_form.username.data
-        entered_password = admin_login_form.password.data
-        user = db.session.execute(db.select(User).where(User.username == entered_username)).scalar()
-        if check_password_hash(user.stored_password, entered_password):
-            print(f"Checking details...")
+    if user_object_list:
+        if admin_login_form.validate_on_submit():
+            entered_username = admin_login_form.username.data
+            entered_password = admin_login_form.password.data
+            user = db.session.execute(db.select(User).where(User.username == entered_username)).scalar()
+            if check_password_hash(user.stored_password, entered_password):
+                print(f"Checking details...")
+                login_user(user)
+                print(f"You have been logged in")
+                return redirect(url_for('admin_dashboard'))
+            else:
+                print("Incorrect credentials")
+                return redirect(url_for('home_page'))
+    else:
+        if admin_login_form.validate_on_submit():
+            entered_username = admin_login_form.username.data
+            entered_password = admin_login_form.password.data
+            new_entry = User(
+                username=entered_username,
+                stored_password=generate_password_hash(entered_password, method='pbkdf2:sha256', salt_length=8)
+            )
+            db.session.add(new_entry)
+            db.session.commit()
+            refresh_user_list()
+            user = new_entry
             login_user(user)
-            print(f"You have been logged in")
             return redirect(url_for('admin_dashboard'))
-        else:
-            print("Incorrect credentials")
-            return redirect(url_for('home_page'))
-    return render_template("adminlogin.html", form=admin_login_form)
+    return render_template("adminlogin.html", form=admin_login_form, user=user_object_list)
 
 @app.route("/admindashboard")
 @login_required
