@@ -15,14 +15,6 @@ body {
     max-height: 100vh;
 }
 
-
-
-nav {
-
-}
-
-
-
 .page-background {
     min-height:100vh;
     height: 100%;
@@ -31,17 +23,11 @@ nav {
     background-position: center center, center center;
     background-repeat: repeat, no-repeat;
     background-attachment: fixed, fixed;
-
-
 }
 
-.entire-flex-wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+.inherit-background {
+    background: inherit;
 }
-
-
 
 .primary-content {
     max-height: calc(100vh - 50px);
@@ -50,6 +36,13 @@ nav {
 
 .primary-content::-webkit-scrollbar {
     display: none;  /* Safari and Chrome */
+}
+
+@media (min-width: 1920px) {
+.primary-content {
+    max-height: calc(100vh - 2vw);
+    overflow-y: scroll;
+}
 }
 
 @media (max-width: 576px) {
@@ -61,7 +54,28 @@ nav {
 }
 }
 
+.artist-name-logo-container {
+    display: grid;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 3vw;
+}
 
+.artist-name-logo {
+    max-height: 15vw;
+}
+
+@media (max-width: 1900px) {
+.artist-name-logo {
+    max-height: 285px;
+}
+}
+
+@media (max-width: 900px) {
+.artist-name-logo {
+    max-width: 90vw;
+}
+}
 
 .header-centered {
     display: grid;
@@ -97,19 +111,12 @@ nav {
     max-width: 280px;
 }
 
-
 .discography-image-item {
     max-height: 100%;
     max-width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-
-
-.inherit-background {
-    background: inherit;
 }
 
 .my-padder{
@@ -129,8 +136,6 @@ nav {
 .nav-link {
     color: white;
 }
-
-
 
 .admin-background {
     min-height:100vh;
@@ -184,21 +189,9 @@ nav {
     padding-top: 50px;
 }
 
-.artist-name-logo-container {
-    display: grid;
-    justify-content: center;
-    padding: 5vw;
-    padding-top: 60px;
-}
-
-.artist-name-logo {
-    max-height: 100%;
-    max-width: 100%;
-}
-
 .streamer-link-container-multi {
     display: grid;
-    grid-template-columns: 150px 140px 95px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
     padding-top: 20px;
     gap: 8vw;
     justify-content: center;
@@ -207,7 +200,7 @@ nav {
 @media (max-width: 576px) {
 .streamer-link-container-multi {
     display: grid;
-    grid-template-columns: 150px 140px 95px;
+    grid-template-columns: auto auto auto;
     gap: 3vw;
     justify-content: center;
 }
@@ -218,10 +211,39 @@ nav {
     align-items: flex-end;
 }
 
+.youtube-link {
+    width: 150px;
+}
+
+.soundcloud-link {
+    width: 140px;
+}
+
+.spotify-link {
+    width: 95px;
+}
+
 .streamer-link {
     max-height: 100%;
     max-width: 100%;
 }
 
+.entire-flex-wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
+.nav-text-properties {
+    font-size: 0.8vw;
+    padding-left: 0.2vw;
+    padding-right: 0.2vw;
+}
 
+@media (max-width: 1920px) {
+.nav-text-properties {
+    font-size: 16px;
+    padding-left: 0.2vw;
+    padding-right: 0.2vw;
+}
+}

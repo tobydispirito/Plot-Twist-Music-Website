@@ -10,9 +10,21 @@
     </div>
 </div>
 <div class="streamer-link-container-multi">
-    <div class="streamer-link-container"><a href="{{ track.youtube_url }}" target=”_blank”><img class="streamer-link" src="/static/images/youtube-icon.png" alt="YouTube Link"></a></div>
-    <div class="streamer-link-container"><a href="{{ track.soundcloud_url }}" target=”_blank”><img class="streamer-link" src="/static/images/soundcloud-icon.png" alt="Soundcloud Link"></a></div>
-    <div class="streamer-link-container"><a href="{{ track.spotify_url }}" target=”_blank”><img class="streamer-link" src="/static/images/spotify-icon.png" alt="Spotify Link"></a></div>
+    {% if track.youtube_url %}
+    <div class="streamer-link-container youtube-link">
+        <a href="{{ track.youtube_url }}" target=”_blank”><img class="streamer-link" src="/static/images/youtube-icon.png" alt="YouTube Link"></a>
+    </div>
+    {% endif %}
+    {% if track.soundcloud_url %}
+    <div class="streamer-link-container soundcloud-link">
+        <a href="{{ track.soundcloud_url }}" target=”_blank”><img class="streamer-link" src="/static/images/soundcloud-icon.png" alt="Soundcloud Link"></a>
+    </div>
+    {% endif %}
+    {% if track.spotify_url %}
+    <div class="streamer-link-container spotify-link">
+        <a href="{{ track.spotify_url }}" target=”_blank”><img class="streamer-link" src="/static/images/spotify-icon.png" alt="Spotify Link"></a>
+    </div>
+    {% endif %}
 </div>
 
 {% include "navfooter.html" %}
