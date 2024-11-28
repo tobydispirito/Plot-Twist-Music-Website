@@ -18,11 +18,15 @@ def admin_login():
             entered_username = admin_login_form.username.data
             entered_password = admin_login_form.password.data
             user = db.session.execute(db.select(User).where(User.username == entered_username)).scalar()
-            if check_password_hash(user.stored_password, entered_password):
-                print(f"Checking details...")
-                login_user(user)
-                print(f"You have been logged in")
-                return redirect(url_for('admin_dashboard'))
+            if user:
+                if check_password_hash(user.stored_password, entered_password):
+                    print(f"Checking details...")
+                    login_user(user)
+                    print(f"You have been logged in")
+                    return redirect(url_for('admin_dashboard'))
+                else:
+                    print("Incorrect credentials")
+                    return redirect(url_for('home_page'))
             else:
                 print("Incorrect credentials")
                 return redirect(url_for('home_page'))
