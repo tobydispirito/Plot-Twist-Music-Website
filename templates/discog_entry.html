@@ -1,6 +1,10 @@
 {% include "header.html" %}
     <meta name="robots" content="index, follow">
     <meta name="description" content="Details for the track, including high-res artwork, description and links to listen">
+    <meta property="og:title" content="{{ track.artist }} - {{ track.title }}">
+    <meta property="og:description" content="View {{ track.title }} by {{ track.artist }} here">
+    <meta property="og:image:secure_url" content="{{ track.img_url }}">
+    <meta property="og:url" content="https://plottwistmusic.uk/discography/{{ track.id }}">
     <title>{{ track.artist }} - {{ track.title }}</title>
 </head>
 
