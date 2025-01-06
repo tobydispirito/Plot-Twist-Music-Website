@@ -1,10 +1,4 @@
 h1 {
-    -webkit-transform:scale(1,1.5); /* Safari and Chrome */
-    -moz-transform:scale(1,1.5); /* Firefox */
-    -ms-transform:scale(1,1.5); /* IE 9 */
-    -o-transform:scale(1,1.5); /* Opera */
-    transform:scale(1,1.5); /* W3C */
-    font-family: 'Geometos Rounded', sans-serif;
     text-align: center;
 }
 
@@ -13,6 +7,11 @@ body {
     padding-top: 0px;
     padding-bottom: 0px;
     max-height: 100vh;
+}
+
+iframe {
+    display:block;
+    width:100%;
 }
 
 .page-background {
@@ -57,17 +56,16 @@ body {
 .artist-name-logo-container {
     display: grid;
     justify-content: center;
-    padding-top: 60px;
-    padding-bottom: 3vw;
+    padding-bottom: 1.5vw;
 }
 
 .artist-name-logo {
-    max-height: 15vw;
+    max-height: 12vw;
 }
 
 @media (max-width: 1900px) {
 .artist-name-logo {
-    max-height: 285px;
+    max-height: 230px;
 }
 }
 
@@ -246,4 +244,155 @@ body {
     padding-left: 0.2vw;
     padding-right: 0.2vw;
 }
+}
+
+.about-contact-section-container {
+    display: grid;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.about-contact-section {
+    background-color: rgba(25,25,25,0.8);;
+    max-width: 800px;
+    min-width: 800px;
+    min-height: 35vh;
+}
+
+@media (max-width: 1000px) {
+.about-contact-section {
+    background-color: rgba(25,25,25,0.8);;
+    max-width: 80vw;
+    min-width: 80vw;
+    min-height: 35vh;
+}
+}
+
+@media (min-width: 1920px) {
+.about-contact-section {
+    background-color: rgba(25,25,25,0.8);;
+    max-width: 42vw;
+    min-width: 42vw;
+    min-height: 35vh;
+}
+}
+
+.about-contact-content {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+@media (max-width: 1000px) {
+.about-contact-content {
+    padding-left: 6vw;
+    padding-right: 6vw;
+    padding-bottom: 60px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+}
+
+.center-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.below-navbar {
+    padding-top: 60px;
+}
+
+.music-production-container-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(672px, 0fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-top: 50px;
+}
+
+
+
+.music-production-text-section {
+    background-color: rgba(25,25,25,0.8);
+    max-width: 672px;
+    min-width: 672px;
+    min-height: 35vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (max-width: 753px) {
+.music-production-text-section {
+    background-color: rgba(25,25,25,0.8);
+    max-width: 90vw;
+    min-width: 90vw;
+    min-height: 35vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+@media (min-width: 1920px) {
+.music-production-text-section {
+    background-color: rgba(25,25,25,0.8);
+    max-width: 35vw;
+    min-width: 35vw;
+    min-height: 35vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+
+.music-production-text-content {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.music-production-video-section {
+    max-width: 672px;
+    min-width: 672px;
+    min-height: 35vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 753px) {
+.music-production-video-section {
+    max-width: 90vw;
+    min-width: 90vw;
+    min-height: 35vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+@media (min-width: 1920px) {
+.music-production-video-section {
+    max-width: 35vw;
+    min-width: 35vw;
+    min-height: 35vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+}
+
+.music-production-video-content {
+
 }

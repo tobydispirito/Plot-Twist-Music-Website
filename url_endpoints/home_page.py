@@ -7,4 +7,4 @@ import database_management.initialise_db_and_lists
 def home_page():
     track_object_list = database_management.initialise_db_and_lists.track_object_list
     print("All OK here")
-    return render_template("homepage.html", tracks=track_object_list)
+    return render_template("homepage.html", tracks=track_object_list, title="Homepage")

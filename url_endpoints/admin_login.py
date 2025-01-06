@@ -44,4 +44,4 @@ def admin_login():
             user = new_entry
             login_user(user)
             return redirect(url_for('admin_dashboard'))
-    return render_template("adminlogin.html", form=admin_login_form, user=user_object_list)
+    return render_template("adminlogin.html", form=admin_login_form, user=user_object_list, title="Admin Login")
