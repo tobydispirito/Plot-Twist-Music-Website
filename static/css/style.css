@@ -193,6 +193,7 @@ iframe {
     padding-top: 20px;
     gap: 8vw;
     justify-content: center;
+    margin-bottom: 40px;
 }
 
 @media (max-width: 576px) {
