@@ -2,6 +2,31 @@ h1 {
     text-align: center;
 }
 
+@media (min-width: 1920px) {
+h1 {
+    text-align: center;
+    font-size: 2.1vw;
+}
+}
+
+@media (min-width: 1920px) {
+h2 {
+    font-size: 1.7vw;
+}
+}
+
+@media (min-width: 1920px) {
+h4 {
+    font-size: 1.25vw;
+}
+}
+
+@media (min-width: 1920px) {
+p {
+    font-size: 0.9vw;
+}
+}
+
 body {
     color: white;
     padding-top: 0px;
@@ -48,7 +73,6 @@ iframe {
 .primary-content {
     flex: 1;
     max-height: calc(100vh - 170px);
-    overflow:hidden;
     overflow-y: scroll;
 }
 }
@@ -305,6 +329,11 @@ iframe {
 .below-navbar {
     padding-top: 60px;
 }
+@media (min-width: 1920px) {
+.below-navbar {
+    padding-top: 3vw;
+}
+}
 
 .music-production-container-1 {
     display: grid;
@@ -315,6 +344,19 @@ iframe {
     padding-right: 5vw;
     padding-left: 5vw;
     padding-top: 50px;
+}
+
+@media (min-width: 1920px) {
+.music-production-container-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35vw, 0fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-top: 50px;
+}
 }
 
 
@@ -388,6 +430,7 @@ iframe {
     max-width: 35vw;
     min-width: 35vw;
     min-height: 35vh;
+    max-height: 35vw;
     display: block;
     margin-left: auto;
     margin-right: auto;
