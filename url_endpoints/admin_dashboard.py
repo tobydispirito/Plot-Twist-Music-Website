@@ -9,4 +9,4 @@ from website_management import app
 def admin_dashboard():
     track_object_list = database_management.initialise_db_and_lists.track_object_list
     print(f"admin dashboard tracks value: {track_object_list}")
-    return render_template("admindashboard.html", tracks=track_object_list, title="Admin Dashboard")
+    return render_template("admindashboard.html", tracks=track_object_list)

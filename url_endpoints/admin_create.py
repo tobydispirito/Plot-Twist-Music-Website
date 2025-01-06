@@ -33,4 +33,4 @@ def admin_create():
         print(database_management.initialise_db_and_lists.track_object_list)
         return redirect(url_for('admin_dashboard'))
 
-    return render_template("admineditor.html", form=admin_create_form, is_create=True, title="Create Entry")
+    return render_template("admineditor.html", form=admin_create_form, is_create=True)

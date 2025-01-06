@@ -38,4 +38,4 @@ def admin_amend(entry_id):
         db.session.commit()
         refresh_tracks_list()
         return redirect(url_for('admin_dashboard'))
-    return render_template('adminamend.html', amend_form=admin_amend_form, track=current_entry, title="Amend Entry")
+    return render_template('adminamend.html', amend_form=admin_amend_form, track=current_entry)
