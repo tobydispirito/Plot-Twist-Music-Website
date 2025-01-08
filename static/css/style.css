@@ -209,6 +209,7 @@ iframe {
     padding-right: 5vw;
     padding-left: 5vw;
     padding-top: 50px;
+    box-sizing: border-box;
 }
 
 .streamer-link-container-multi {
