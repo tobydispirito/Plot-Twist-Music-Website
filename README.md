@@ -10,7 +10,7 @@ This project was an excellent challenge to advance my coding skills and web deve
 - Host all my current and future music releases.
 - Provide a seamless, responsive user experience across all devices and resolutions.
 
-To efficiently manage new music releases, the website dynamically generates pages based on data stored in a database. This eliminates the need to manually code new pages for each release, making the process scalable and efficient.
+To efficiently manage new music releases, the website dynamically generates pages based on data stored in a SQL database. This eliminates the need to manually code new pages for each release, making the process scalable and efficient.
 
 An admin panel with secure login functionality enables CRUD (Create, Read, Update, Delete) operations on the database. User credentials are hashed and salted using **Werkzeug** for added security.
 
