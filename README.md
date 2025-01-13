@@ -4,6 +4,17 @@ A responsive and dynamic website showcasing all my music releases, designed to s
 
 ---
 
+## Live Website
+
+The website is live at [https://plottwistmusic.uk/](https://plottwistmusic.uk/)
+
+<br/>
+<br/>
+
+The website is hosted with a cutom domain using [https://www.cloudflare.com/](https://www.cloudflare.com/) and [https://render.com/](https://render.com/)
+
+---
+
 ## Description
 
 This project was an excellent challenge to advance my coding skills and web development. The website is designed to:
@@ -29,17 +40,6 @@ See below for an idea of how the website scales with resolution, when many track
 - Secure admin login with hashed and salted credentials.
 - Admin panel for managing music release data (CRUD operations).
 - Hosted on a custom domain for accessibility and branding.
-
----
-
-## Live Website
-
-The website is live at [https://plottwistmusic.uk/](https://plottwistmusic.uk/)
-
-<br/>
-<br/>
-
-The website is hosted with a cutom domain using [https://www.cloudflare.com/](https://www.cloudflare.com/) and [https://render.com/](https://render.com/)
 
 ---
 
