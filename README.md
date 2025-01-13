@@ -11,7 +11,7 @@ The website is live at [https://plottwistmusic.uk/](https://plottwistmusic.uk/)
 <br/>
 <br/>
 
-The website is hosted with a cutom domain using [https://www.cloudflare.com/](https://www.cloudflare.com/) and [https://render.com/](https://render.com/)
+The website is hosted with a custom domain using [https://www.cloudflare.com/](https://www.cloudflare.com/) and [https://render.com/](https://render.com/)
 
 ---
 
